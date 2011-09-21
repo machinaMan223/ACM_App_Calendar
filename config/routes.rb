@@ -1,4 +1,8 @@
 ACMApp::Application.routes.draw do
+  get "store/index"
+
+  resources :products
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
