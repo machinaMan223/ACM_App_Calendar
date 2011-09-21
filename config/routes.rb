@@ -1,4 +1,4 @@
-ACM_App::Application.routes.draw do
+ACMApp::Application.routes.draw do
   get "acm_app/index"
 
   resources :products
