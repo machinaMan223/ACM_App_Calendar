@@ -1,4 +1,6 @@
 ACMApp::Application.routes.draw do
+  get "acm_app/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
