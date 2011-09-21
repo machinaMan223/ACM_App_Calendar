@@ -1,7 +1,11 @@
 ACMApp::Application.routes.draw do
-  get "acm_app/index"
+  get "store/index"
 
   resources :products
+  
+  get "acm_app/index"
+
+  
 
   root :to => 'acm_app#index', :as => 'acm_app'
 
