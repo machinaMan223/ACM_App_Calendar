@@ -1,8 +1,7 @@
 <h2>Your VSU ACM Cart</h2>
 <ul>
 	<% @cart.line_items.each do |item| %>
-	<li>
-		<%= item.product.title %>
-	</li>
+	<li><%= item.quantity %> &times; <%= item.product.title %></li>
 	<% end %>
 </ul>
+<%= link_to 'Back to catalog', store_index_path %>
