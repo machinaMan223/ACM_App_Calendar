@@ -10,3 +10,4 @@ class Event < ActiveRecord::Base
     :with => %r{\.(gif|jpg|png)$}i,
     :message => 'must be a URL for GIF, JPG or PNG image.'
   }
+end
