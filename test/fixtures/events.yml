@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  eventDate: 2011-09-28
+  eventTime: 2011-09-28 13:54:00
+  duration: 
+  location: MyString
+  description: MyText
+  price: 
+  icon: 
+
+two:
+  name: MyString
+  eventDate: 2011-09-28
+  eventTime: 2011-09-28 13:54:00
+  duration: 
+  location: MyString
+  description: MyText
+  price: 
+  icon: 

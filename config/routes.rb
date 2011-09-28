@@ -1,4 +1,6 @@
 ACMApp::Application.routes.draw do
+  resources :events
+
   resources :line_items
 
   resources :carts
