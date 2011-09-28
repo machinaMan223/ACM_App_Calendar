@@ -14,7 +14,7 @@ redirect_to login_url, :alert => "Invalid user/password combination"
 
   def destroy
     session[:user_id] = nil
-    redirect_to store_url, :notice => "Logged out"
+    redirect_to store_index_path, :notice => "Logged out"
   end
 
 end
