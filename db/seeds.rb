@@ -13,3 +13,13 @@ Product.create(:title => 'VSU ACM Membership',
       </p>},
   :image_url => '/images/acm.jpg',
   :price => 20.00)
+  
+ Event.create(:name => 'Team Fortress 2 LAN Party',
+  :eventDate => '10/07/2011', :eventTime => '5:00:00'
+  :duration => 3, :location => 'NH 2109',
+  :description =>
+    %{<p>
+        Come blow off some steam after midterms week. FREE TO PLAY!
+      </p>},
+  :icon => '/images/TF2.jpg',
+  :price => 3.00)

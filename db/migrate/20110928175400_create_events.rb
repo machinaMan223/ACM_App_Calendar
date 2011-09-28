@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.text :description
       t.double :price
-      t.image_url :icon
+      t.string :icon
 
       t.timestamps
     end
