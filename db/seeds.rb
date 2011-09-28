@@ -17,7 +17,7 @@ Product.create(:title => 'VSU ACM Membership',
   :price => 20.00)
   
  Event.create(:name => 'Team Fortress 2 LAN Party',
-  :eventDate => ::Date.new('10-07-2011'), :eventTime => ::Time.new('5:00:00'),
+  :eventDate => ::Date.new('10-07-2011'), :eventTime => ::Time.new('17:00'),
   :duration => 3, :location => 'NH 2109',
   :description =>
     %{<p>
