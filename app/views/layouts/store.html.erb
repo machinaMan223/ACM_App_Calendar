@@ -27,6 +27,17 @@
 				<% else %>
 				My Shopping Cart
 				<% end %>
+				<% if session[:user_id] %>
+				<br />
+				<%= link_to 'Orders', orders_path %>
+				<br />
+				<%= link_to 'Products', products_path %>
+				<br />
+				<%= link_to 'Users', users_path %>
+				<br />
+				<br />
+				<%= button_to 'Logout', logout_path, :method => :delete %>
+				<% end %>
 				<br />
 			</div>
 			<div id="main">
