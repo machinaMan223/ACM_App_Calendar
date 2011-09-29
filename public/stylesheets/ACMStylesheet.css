@@ -176,3 +176,31 @@
   border-top: 1px solid #595;
 }
 /* END:cartmain */
+
+/* Styles for order form */
+.ACMApp_form fieldset {
+background: #efe;
+}
+.ACMApp_form legend {
+color: #dfd;
+background: #141;
+font-family: sans-serif;
+padding: 0.2em 1em;
+}
+.ACMApp_form label {
+width: 5em;
+float: left;
+text-align: right;
+padding-top: 0.2em;
+margin-right: 0.1em;
+display: block;
+}
+.ACMApp_form select, .depot_form textarea, .depot_form input {
+margin-left: 0.5em;
+}
+.ACMApp_form .submit {
+margin-left: 4em;
+}
+.ACMApp_form div {
+margin: 0.5em 0;
+}
