@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  default_scope :order => 'eventDate, eventTime'
+  default_scope :order => 'eventDate desc, eventTime desc'
   
   validates :name, :eventDate, :eventTime, :location, :description,
       :icon, :presence => true
