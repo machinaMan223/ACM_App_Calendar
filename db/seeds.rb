@@ -6,6 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 Product.delete_all
+
 Product.create(:title => 'VSU ACM Membership',
   :description =>
     %{<p>
@@ -13,3 +14,14 @@ Product.create(:title => 'VSU ACM Membership',
       </p>},
   :image_url => '/images/acm.jpg',
   :price => 20.00)
+
+Event.delete_all
+
+Event.create(:name => 'Team Fortress 2 LAN Party',
+  :eventTime => (Time.local(2011,"oct",7,17,0,0)),
+  :duration => 3, :location => 'NH 2109',
+  :description =>
+    %{<p>
+        Come blow off some steam after midterms week. FREE TO PLAY!
+      </p>},
+  :price => 3.00, :icon => '/images/TF2.jpg')

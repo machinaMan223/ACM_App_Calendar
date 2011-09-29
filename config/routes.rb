@@ -1,4 +1,5 @@
 ACMApp::Application.routes.draw do
+<<<<<<< HEAD
   resources :orders
 
   get 'admin' => 'admin#index'
@@ -9,6 +10,8 @@ get 'login' => :new
   end
 
   resources :users
+
+  resources :events
 
   resources :line_items
 
