@@ -1,5 +1,4 @@
 ACMApp::Application.routes.draw do
-<<<<<<< HEAD
   resources :orders
 
   get 'admin' => 'admin#index'
