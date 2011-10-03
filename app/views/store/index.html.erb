@@ -14,13 +14,3 @@
 		</div>
 	</div>
 <% end %>
-
-<% @events.each do |event| %>
-	<div class="entry" >
-		<%= image_tag(event.icon) %> <h3><%= event.name %></h3>
-		<%= sanitize(event.description) %>
-		<div class="price_line" >
-			<span class="price" ><%= number_to_currency(event.price) %></span>
-		</div>
-	</div>
-<% end %>

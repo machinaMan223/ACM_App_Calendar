@@ -4,22 +4,22 @@
 	<% @events.each do |event| %>
 		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
 			<td>
+				<table>
+					<tr>
+						<td><%= event.eventDate %></td>
+						<td><%= event.eventTime %></td>
+					</tr>
+					<tr>
+						<td><%= event.location %></td>
+					</tr>
+				</table>
+			</td>
+			<td>
 				<%= image_tag(event.icon, :class => 'list_image') %>
 			</td>
 			<td class="list_description" >
 				<dl>
 					<dt><%= event.name %></dt>
-					<dd>
-						<table>
-							<tr>
-								<td><%= event.eventDate %></td>
-								<td><%= event.eventTime %></td>
-							</tr>
-							<tr>
-								<td><%= event.location %></td>
-							</tr>
-						</table>
-					</dd>
 					<dd><%= truncate(strip_tags(event.description),
 						:length => 80) %></dd>
 				</dl>
