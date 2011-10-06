@@ -1,0 +1,2 @@
+module EventCalendarHelper
+end

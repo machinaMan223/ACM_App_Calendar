@@ -1,4 +1,8 @@
 ACMApp::Application.routes.draw do
+  get "event_calendar/index"
+
+  get "roster/index"
+
   resources :orders
 
   get 'admin' => 'admin#index'
