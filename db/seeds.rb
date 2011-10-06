@@ -25,3 +25,6 @@ Event.create(:name => 'Team Fortress 2 LAN Party',
         Come blow off some steam after midterms week. FREE TO PLAY!
       </p>},
   :price => 3.00, :icon => '/images/TF2.jpg')
+ 
+User.create(:name => 'admin',
+  :password => 'admin')
