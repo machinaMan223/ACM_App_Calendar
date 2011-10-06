@@ -26,22 +26,20 @@
 					<li>
 						<%= link_to 'Users', users_url %>
 					</li>
+					<% if session[:user_id] %>
+						<li>
+							<%= link_to 'Logout', logout_path, :method => :delete %>
+						</li>
+					<% end %>
 				</ul>
 			</div>
 			<div id="content-container">
 				<div id="content">
 					<%= yield %>
 				</div>
-				<div id="aside">
-					<% if !session[:cart_id].nil? %>
-					<%= link_to "My Shopping Cart", cart_path(session[:cart_id]) %>
-					<% else %>
-					My Shopping Cart
-					<% end %>
-					<% if session[:user_id] %>
-					<%= button_to 'Logout', logout_path, :method => :delete %>
-					<% end %>
-				</div>
+				<%= hidden_div_if(@cart.line_items.empty?, :id => "aside") do %>
+					<%= render @cart %>
+				<% end %>
 			</div>
 	</body>
 </html>
