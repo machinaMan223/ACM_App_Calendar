@@ -26,5 +26,7 @@ Event.create(:name => 'Team Fortress 2 LAN Party',
       </p>},
   :price => 3.00, :icon => '/images/TF2.jpg')
  
-User.create(:name => 'admin',
+User.create(:name => 'admin', :fullName => 'Administrator',
+  :address => '1500 N Patterson St, Valdosta, GA 31698',
+  :email => 'blank@blank.com', :admin => true,
   :password => 'admin')
