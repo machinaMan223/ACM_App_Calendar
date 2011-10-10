@@ -52,6 +52,17 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
 
+    product = Product.find_by_title("VSU ACM Membership")
+    user = User.find(session[:user_id])
+    cart = current_cart
+    
+    cart.line_items.each do |line_item|
+      if line_item.product_id = product.id
+        user.paid = true
+        user.update_attributes(:paid)
+      end
+    end
+
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
