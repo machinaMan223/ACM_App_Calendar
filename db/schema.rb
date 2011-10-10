@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006184732) do
+ActiveRecord::Schema.define(:version => 20111006190558) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20111006184732) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.boolean  "paid"
   end
 
 end

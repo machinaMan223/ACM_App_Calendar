@@ -27,6 +27,8 @@ get :who_bought, :on => :member
   end
 
   get "acm_app/index"
+  
+  get "users/new"
 
   root :to => 'acm_app#index', :as => 'acm_app'
 
