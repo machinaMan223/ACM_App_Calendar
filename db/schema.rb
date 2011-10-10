@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20111010222732) do
 
   create_table "carts", :force => true do |t|
@@ -74,10 +73,8 @@ ActiveRecord::Schema.define(:version => 20111010222732) do
     t.float    "longitude"
     t.boolean  "gmaps"
     t.boolean  "paid"
-
     t.string   "classification"
     t.string   "emailAddress"
-
   end
 
 end
