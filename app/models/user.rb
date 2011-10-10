@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => true
   attr_accessor :password_confirmation
   attr_reader   :password
+  
+  validates :address, :presence => true
+ 
+  validates :emailAddress, :presence => true
+  
+  validates :classification, :presence => true
 
   validate  :password_must_be_present
   
