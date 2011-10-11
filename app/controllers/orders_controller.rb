@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
   skip_before_filter :authorize, :only => [:new, :create]
+  skip_before_filter :admin_authorize, :only => [:new, :create]
   
   # GET /orders
   # GET /orders.xml
   def index
+    @admin = is_admin
     @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
       :per_page => 10
 
@@ -16,6 +18,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.xml
   def show
+    @admin = is_admin
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +30,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.xml
   def new
+    @admin = is_admin
     @cart = current_cart
     if @cart.line_items.empty?
       redirect_to store_url, :notice => "Your cart is empty"
@@ -43,12 +47,14 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @admin = is_admin
     @order = Order.find(params[:id])
   end
 
   # POST /orders
   # POST /orders.xml
   def create
+    @admin = is_admin
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
 
@@ -80,6 +86,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.xml
   def update
+    @admin = is_admin
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -96,6 +103,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.xml
   def destroy
+    @admin = is_admin
     @order = Order.find(params[:id])
     @order.destroy
 

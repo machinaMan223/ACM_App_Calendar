@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
+  
   def index
     @events = Event.all
+    @admin = is_admin
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
+    @admin = is_admin
     @event = Event.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +27,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
+    @admin = is_admin
     @event = Event.new
 
     respond_to do |format|
@@ -34,12 +38,14 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @admin = is_admin
     @event = Event.find(params[:id])
   end
 
   # POST /events
   # POST /events.xml
   def create
+    @admin = is_admin
     @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -56,6 +62,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
+    @admin = is_admin
     @event = Event.find(params[:id])
 
     respond_to do |format|
@@ -72,6 +79,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
+    @admin = is_admin
     @event = Event.find(params[:id])
     @event.destroy
 

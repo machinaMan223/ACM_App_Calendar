@@ -1,7 +1,9 @@
 class StoreController < ApplicationController
-  skip_before_filter :authorize
+  before_filter :authorize
+  skip_before_filter :admin_authorize
   
   def index
+    @admin = is_admin
     @products = Product.all
     @events = Event.all
     @cart = current_cart

@@ -1,8 +1,11 @@
 class LineItemsController < ApplicationController
   skip_before_filter :authorize, :only => :create
+  skip_before_filter :admin_authorize, :only => :create
+  
   # GET /line_items
   # GET /line_items.xml
   def index
+    @admin = is_admin
     @line_items = LineItem.all
 
     respond_to do |format|
@@ -14,6 +17,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.xml
   def show
+    @admin = is_admin
     @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +29,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/new
   # GET /line_items/new.xml
   def new
+    @admin = is_admin
     @line_item = LineItem.new
 
     respond_to do |format|
@@ -35,12 +40,14 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1/edit
   def edit
+    @admin = is_admin
     @line_item = LineItem.find(params[:id])
   end
 
   # POST /line_items
   # POST /line_items.xml
   def create
+    @admin = is_admin
     @cart = current_cart
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)
@@ -60,6 +67,7 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1
   # PUT /line_items/1.xml
   def update
+    @admin = is_admin
     @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
@@ -76,6 +84,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.xml
   def destroy
+    @admin = is_admin
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 

@@ -27,7 +27,7 @@
 					<%= link_to 'Roster', roster_index_path %>
 				</li>
 				<% if session[:user_id] %>
-					<% if User.find(session[:user_id]).admin = true %>
+					<% if @admin %>
 						<li>
 							<%= link_to 'Admin', admin_url %>
 						</li>

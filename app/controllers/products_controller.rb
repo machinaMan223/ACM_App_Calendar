@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
+  
   def index
+    @admin = is_admin
     @products = Product.all
 
     respond_to do |format|
@@ -13,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    @admin = is_admin
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.xml
   def new
+    @admin = is_admin
     @product = Product.new
 
     respond_to do |format|
@@ -40,6 +44,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
+    @admin = is_admin
     @product = Product.new(params[:product])
 
     respond_to do |format|
@@ -56,6 +61,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.xml
   def update
+    @admin = is_admin
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -72,6 +78,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
+    @admin = is_admin
     @product = Product.find(params[:id])
     @product.destroy
 

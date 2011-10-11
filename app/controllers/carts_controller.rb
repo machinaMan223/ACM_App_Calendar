@@ -1,9 +1,11 @@
 class CartsController < ApplicationController
   skip_before_filter :authorize, :only => [:create, :update, :destroy]
-  
+  skip_before_filter :admin_authorize, :only => [:create, :update, :destroy]
+
   # GET /carts
   # GET /carts.xml
   def index
+    @admin = is_admin
     @carts = Cart.all
 
     respond_to do |format|
@@ -15,6 +17,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.xml
   def show
+    @admin = is_admin
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
@@ -32,7 +35,8 @@ class CartsController < ApplicationController
   # GET /carts/new.xml
   def new
     @cart = Cart.new
-
+    @admin = is_admin
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @cart }
@@ -41,12 +45,14 @@ class CartsController < ApplicationController
 
   # GET /carts/1/edit
   def edit
+    @admin = is_admin
     @cart = Cart.find(params[:id])
   end
 
   # POST /carts
   # POST /carts.xml
   def create
+    @admin = is_admin
     @cart = Cart.new(params[:cart])
 
     respond_to do |format|
@@ -63,6 +69,7 @@ class CartsController < ApplicationController
   # PUT /carts/1
   # PUT /carts/1.xml
   def update
+    @admin = is_admin
     @cart = Cart.find(params[:id])
 
     respond_to do |format|
@@ -79,6 +86,7 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy
+    @admin = is_admin
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
