@@ -3,7 +3,7 @@
 	<head>
 		<title>VSU ACM</title>
 		<!-- START:stylesheet -->
-		<%= stylesheet_link_tag "one" %> <!-- END:stylesheet -->
+		<%= stylesheet_link_tag "two" %> <!-- END:stylesheet -->
 		<%= javascript_include_tag :defaults %>
 		<%= csrf_meta_tag %>
 	</head>
@@ -26,6 +26,11 @@
 					<%= link_to 'Roster', roster_index_path %>
 				</li>
 				<% if session[:user_id] %>
+					<% if User.find(session[:user_id]).admin = true %>
+						<li>
+							<%= link_to 'Admin', admin_url %>
+						</li>
+					<% end %>
 					<li>
 						<%= link_to 'Logout', logout_path, :method => :delete %>
 					</li>
