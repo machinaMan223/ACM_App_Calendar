@@ -7,17 +7,23 @@
 <table>
 	<tr>
 		<th>Name</th>
-		<th>Hashed password</th>
-		<th>Salt</th>
+		<th>Username</th>
+		<th>Address</th>
+		<th>Classification</th>
+		<th>Admin</th>
+		<th>Paid</th>
 		<th></th>
 		<th></th>
 		<th></th>
 	</tr>
 	<% @users.each do |user| %>
 	<tr>
+		<td><%= user.fullName %></td>
 		<td><%= user.name %></td>
-		<td><%= user.hashed_password %></td>
-		<td><%= user.salt %></td>
+		<td><%= user.address %></td>
+		<td><%= user.classification %></td>
+		<td><%= user.admin %></td>
+		<td><%= user.paid %></td>
 		<td><%= link_to 'Show', user %></td>
 		<td><%= link_to 'Edit', edit_user_path(user) %></td>
 		<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

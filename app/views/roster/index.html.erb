@@ -1,16 +1,14 @@
-<% if notice %>
-<p id="notice" ><%= notice %></p>
-<% end %>
+<h1>ACM Roster</h1>
 
-<h1>Your VSU ACM Catalog</h1>
-
-<% @members.each do |member| %>
-	<div class="entry" >
-		<%= image_tag(product.image_url) %> <h3><%= product.title %></h3>
-		<%= sanitize(product.description) %>
-		<div class="price_line" >
-			<span class="price" ><%= number_to_currency(product.price) %></span>
-			<%= button_to 'Add to Cart', line_items_path(:product_id => product), :remote => true %>
-		</div>
-	</div>
-<% end %>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Classification</th>
+	</tr>
+	<% @members.each do |member| %>
+	<tr>
+		<td><%= member.fullName %></td>
+		<td><%= member.classification %></td>
+	</tr>
+	<% end %>
+</table>
