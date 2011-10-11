@@ -6,9 +6,11 @@
 		<th>Classification</th>
 	</tr>
 	<% @members.each do |member| %>
-	<tr>
-		<td><%= member.fullName %></td>
-		<td><%= member.classification %></td>
-	</tr>
+		<% if member.name != 'admin'%>
+			<tr>
+				<td><%= member.fullName %></td>
+				<td><%= member.classification %></td>
+			</tr>
+		<% end %>
 	<% end %>
 </table>
