@@ -13,6 +13,9 @@
 					<%= event.eventTime %>
 				</dd>
 				<dd>
+					<%= event.address %>
+				</dd>
+				<dd>
 					<%= truncate(strip_tags(event.description),
 					:length => 80) %>
 				</dd>
@@ -29,4 +32,4 @@
 	</table>
 </div>
 <br />
-<%= link_to 'New product', new_product_path %>
+<%= link_to 'New event', new_event_path %>

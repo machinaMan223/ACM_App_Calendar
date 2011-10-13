@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'will_paginate', '>= 3.0.pre'
 
+gem 'gmaps4rails'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

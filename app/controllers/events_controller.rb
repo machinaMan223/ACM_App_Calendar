@@ -7,6 +7,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @admin = is_admin
+    
+    @events.each do |event|
+      event.gmaps = true
+      event.update_attributes(:gmaps)
+    end
+    
+    @json = Event.all.to_gmaps4rails
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +26,17 @@ class EventsController < ApplicationController
   def show
     @admin = is_admin
     @event = Event.find(params[:id])
+    
+    @event.gmaps = true
+    @event.update_attributes(:gmaps)
+    
+    @json = @event.to_gmaps4rails
+    
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @user.gmaps = true
+      @user.update_attributes(:gmaps)
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  acts_as_gmappable
   default_scope :order => 'eventDate desc, eventTime desc'
   
   validates :name, :eventTime, :location, :description,
@@ -10,4 +11,11 @@ class Event < ActiveRecord::Base
     :with => %r{\.(gif|jpg|png)$}i,
     :message => 'must be a URL for GIF, JPG or PNG image.'
   }
+  
+  def gmaps4rails_address
+    address
+  end
+  def gmaps4rails_infowindow
+    "<h4>#{name}</h4>" << "<h4>#{address}</h4>"
+  end
 end

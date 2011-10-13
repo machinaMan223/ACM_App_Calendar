@@ -16,13 +16,13 @@
 </p>
 
 <p>
-  <b>Duration:</b>
-  <%= @event.duration %>
+	<b>Location:</b>
+	<%= @event.location %>
 </p>
 
 <p>
-  <b>Location:</b>
-  <%= @event.location %>
+  <b>Address:</b>
+  <%= @event.address %>
 </p>
 
 <p>
@@ -39,6 +39,14 @@
   <b>Icon:</b>
   <%= @event.icon %>
 </p>
+
+
+<br />
+<% if session[:user_id] %>
+	<%= gmaps({ "direction" => { "data" => { "from" => @user.address, "to" => @event.address } } })%>
+<% else %>
+	<%= gmaps4rails(@json) %>
+<% end %>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

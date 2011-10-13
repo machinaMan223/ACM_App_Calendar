@@ -6,6 +6,7 @@
 		<%= stylesheet_link_tag "two" %> <!-- END:stylesheet -->
 		<%= javascript_include_tag :defaults %>
 		<%= csrf_meta_tag %>
+		<%= yield :head %>
 	</head>
 	<div id="container">
 		<div id="header">
@@ -46,6 +47,7 @@
 		</div>
 		<div id="content">
 			<%= yield %>
+			<%= yield :scripts %>
 		</div>
 	</div>
 	</body>
