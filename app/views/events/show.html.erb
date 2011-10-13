@@ -49,5 +49,11 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<br />
+
+<% if session[:user_id] %>
+	<% if @admin %>
+		<%= link_to 'Edit', edit_event_path(@event) %> |
+	<% end %>
+<% end %>
+<%= link_to 'Back', :back %>
