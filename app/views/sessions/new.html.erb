@@ -10,7 +10,7 @@
 			Please Log In
 		</legend>
 		<div>
-			<label for="name" >Name:</label>
+			<label for="name" >Username:</label>
 			<%= text_field_tag :name, params[:name] %>
 		</div>
 		<div>
@@ -22,4 +22,6 @@
 		</div>
 	</fieldset>
 	<% end %>
+	<br />
+	Not a member? <%= link_to 'Register', users_new_path %> now!
 </div>

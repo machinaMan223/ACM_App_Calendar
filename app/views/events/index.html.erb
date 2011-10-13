@@ -1,40 +1,32 @@
-<div id="event_list" >
-	<h1>Upcoming events</h1>
+<div id="product_list" >
+	<h1>Listing products</h1>
 	<table>
-	<% @events.each do |event| %>
+		<% @events.each do |event| %>
 		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
-			<td>
-				<table>
-					<tr>
-						<td><%= event.eventDate %></td>
-						<td><%= event.eventTime %></td>
-					</tr>
-					<tr>
-						<td><%= event.location %></td>
-					</tr>
-				</table>
-			</td>
-			<td>
-				<%= image_tag(event.icon, :class => 'list_image') %>
-			</td>
+			<td> <%= image_tag(event.icon, :class => 'list_image') %> </td>
 			<td class="list_description" >
-				<dl>
-					<dt><%= event.name %></dt>
-					<dd><%= truncate(strip_tags(event.description),
-						:length => 80) %></dd>
-				</dl>
-			</td>
-			<td class="list_actions" >
-				<%= link_to 'Show', event %><br/>
-				<%= link_to 'Edit', edit_event_path(event) %><br/>
-				<%= link_to 'Destroy', event,
-							:confirm => 'Are you sure?',
-							:method => :delete %>
-			</td>
+			<dl>
+				<dt>
+					<%= event.name %>
+				</dt>
+				<dd>
+					<%= event.eventTime %>
+				</dd>
+				<dd>
+					<%= truncate(strip_tags(event.description),
+					:length => 80) %>
+				</dd>
+			</dl></td>
+			<td class="list_actions" > <%= link_to 'Show', event %>
+			<br/>
+			<%= link_to 'Edit', edit_event_path(event) %>
+			<br/>
+			<%= link_to 'Destroy', event,
+			:confirm => 'Are you sure?',
+			:method => :delete %> </td>
 		</tr>
-	<% end %>
+		<% end %>
 	</table>
 </div>
 <br />
-
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New product', new_product_path %>

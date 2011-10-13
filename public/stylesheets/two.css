@@ -7,7 +7,7 @@
 
 #header
 {
-	background: #ccc;
+	background: #0099CC;
 	padding: 20px;
 }
 
@@ -17,7 +17,7 @@
 {
 	float: left;
 	width: 100%;
-	background: #333;
+	background: #005588;
 }
 
 #navigation ul
@@ -81,4 +81,88 @@
 	text-align: right;
 	padding: 20px;
 	height: 1%;
+}
+
+/* Product CSS */
+#product_list table {
+	border-collapse: collapse;
+}
+#product_list table tr td {
+	padding: 5px;
+	vertical-align: top;
+}
+#product_list .list_image {
+	width: 60px;
+	height: 70px;
+}
+#product_list .list_description {
+	width: 60%;
+}
+#product_list .list_description dl {
+	margin: 0;
+}
+#product_list .list_description dt {
+	color: #244;
+	font-weight: bold;
+	font-size: larger;
+}
+#product_list .list_description dd {
+	margin: 0;
+}
+#product_list .list_actions {
+	font-size: x-small;
+	text-align: right;
+	padding-left: 1em;
+}
+#product_list .list_line_even {
+	background: #e0f8f8;
+}
+#product_list .list_line_odd {
+	background: #33FFFF;
+}
+
+/* Store */
+.entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+}
+
+.title {
+  font-size: 120%;
+  font-family: sans-serif;
+}
+
+.entry img {
+  width: 80px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+
+.entry h3 {
+ margin-top: 0;
+ margin-bottom: 2px;
+ color: #227;
+}
+
+.entry p {
+ margin-top: 0.5em; 
+ margin-bottom: 0.8em; 
+}
+
+.entry .price_line {
+ clear: both;
+ margin-bottom: 0.5em;
+}
+
+.entry .add_to_cart {
+  position: relative;
+}
+
+.entry  .price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 2em;
 }

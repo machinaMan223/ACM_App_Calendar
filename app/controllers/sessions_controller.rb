@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     @admin = is_admin
     if user = User.authenticate(params[:name], params[:password])
       session[:user_id] = user.id
-      redirect_to admin_url
+      redirect_to acm_app_url
     else
 redirect_to login_url, :alert => "Invalid user/password combination"
     end
@@ -19,7 +19,7 @@ redirect_to login_url, :alert => "Invalid user/password combination"
   def destroy
     @admin = is_admin
     session[:user_id] = nil
-    redirect_to store_index_path, :notice => "Logged out"
+    redirect_to acm_app_url, :notice => "Logged out"
   end
 
 end
