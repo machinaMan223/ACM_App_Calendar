@@ -3,6 +3,7 @@
 <% @events.each do |event| %>
 	<div class="entry" >
 		<%= link_to(image_tag(event.icon), event) %> <h3><%= event.name %></h3>
+		<%= event.eventDate %>
 		<%= event.eventTime %>
 		<%= sanitize(event.description) %>
 		

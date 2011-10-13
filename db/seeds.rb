@@ -18,15 +18,30 @@ Product.create(:title => 'VSU ACM Membership',
 Event.delete_all
 
 Event.create(:name => 'Team Fortress 2 LAN Party',
+  :eventDate => (Date.new(2011, 10, 7)),
   :eventTime => (Time.local(2011,"oct",7,17,0,0)),
-  :duration => 3, :location => 'NH 2109',
+  :duration => 3, :location => 'Nevins Hall 2109',
+  :address => '1500 N Patterson St, Valdosta, GA 31698',
   :description =>
     %{<p>
         Come blow off some steam after midterms week. FREE TO PLAY!
       </p>},
   :price => 3.00, :icon => '/images/TF2.jpg')
- 
+  
+Event.create(:name => 'ACM Welcome Picnic',
+  :eventDate => (Date.new(2011, 9, 16)),
+  :eventTime => (Time.local(2011, "sep", 16, 15, 0, 0)),
+  :duration => 2, :location => 'McKey Park',
+  :address => '112 Burton Ave.Valdosta, GA 31601',
+  :description =>
+    %{<p>
+        Meet and greet picnic in the park.
+      </p>},
+  :price => 3.00, :icon => '/images/acm.jpg')
+
+User.delete_all
+
 User.create(:name => 'admin', :fullName => 'Administrator',
   :address => '1500 N Patterson St, Valdosta, GA 31698',
-  :email => 'blank@blank.com', :admin => true, :paid => true,
+  :emailAddress => 'blank@blank.com', :admin => true, :paid => true,
   :password => 'admin', :classification => 'Senior')
