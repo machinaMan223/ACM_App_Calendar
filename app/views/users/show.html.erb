@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+	<b>Full Name:</b>
+	<%= @user.fullName %>
+</p>
+
+<p>
+  <b>Username:</b>
   <%= @user.name %>
 </p>
 
@@ -14,6 +19,28 @@
   <b>Salt:</b>
   <%= @user.salt %>
 </p>
+
+<p>
+	<b>Email:</b>
+	<%= @user.emailAddress %>
+</p>
+
+<p>
+	<b>Address:</b>
+	<%= @user.address %>
+</p>
+
+<p>
+	<b>Admin:</b>
+	<%= @user.admin %>
+</p>
+
+<p>
+	<b>Paid:</b>
+	<%= @user.paid %>
+</p>
+
+<p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
