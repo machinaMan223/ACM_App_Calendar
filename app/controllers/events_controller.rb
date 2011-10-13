@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  skip_before_filter :authorize, :only => :show
+  skip_before_filter :admin_authorize, :only => :show
   # GET /events
   # GET /events.xml
   
