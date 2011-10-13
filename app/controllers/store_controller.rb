@@ -7,6 +7,14 @@ class StoreController < ApplicationController
     @products = Product.all
     @events = Event.all
     @cart = current_cart
+    @paid = has_paid
+  end
+  
+  def has_paid
+    if session[:user_id]
+      user = User.find(session[:user_id])
+      user.paid
+    end
   end
 
 protected
