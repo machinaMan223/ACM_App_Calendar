@@ -1,5 +1,6 @@
 ACMApp::Application.routes.draw do
-  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar,
+  :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get "event_calendar/index"
 
@@ -8,8 +9,9 @@ ACMApp::Application.routes.draw do
   resources :orders
 
   get 'admin' => 'admin#index'
+  
   controller :sessions do
-get 'login' => :new
+    get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
@@ -25,7 +27,7 @@ get 'login' => :new
   get "store/index"
 
   resources :products do
-get :who_bought, :on => :member
+    get :who_bought, :on => :member
   end
 
   get "acm_app/index"
