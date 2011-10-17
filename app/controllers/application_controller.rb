@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     cart = Cart.create
     session[:cart_id] = cart.id
     cart
-    end
+  end
     
   def is_admin
     if session[:user_id]

@@ -10,7 +10,7 @@
 					<%= event.name %>
 				</dt>
 				<dd>
-					<%= event.eventTime %>
+					<%= (event.start_at).to_formatted_s(:long_ordinal)  %>
 				</dd>
 				<dd>
 					<%= event.address %>

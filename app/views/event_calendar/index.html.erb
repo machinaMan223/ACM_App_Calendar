@@ -3,8 +3,7 @@
 <% @events.each do |event| %>
 	<div class="entry" >
 		<%= link_to(image_tag(event.icon), event) %> <h3><%= event.name %></h3>
-		<%= event.eventDate %>
-		<%= event.eventTime %>
+		<%= (event.start_at).to_formatted_s(:long_ordinal) %>
 		<%= sanitize(event.description) %>
 		
 	</div>

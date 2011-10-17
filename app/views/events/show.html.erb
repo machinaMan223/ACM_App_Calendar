@@ -7,12 +7,12 @@
 
 <p>
   <b>Eventdate:</b>
-  <%= @event.eventDate %>
+  <%= ((@event.start_at).to_date()).to_formatted_s(:long) %>
 </p>
 
 <p>
   <b>Eventtime:</b>
-  <%= @event.eventTime %>
+  <%= ((@event.start_at).to_time()).to_s(:time) %>
 </p>
 
 <p>
@@ -43,7 +43,8 @@
 
 <br />
 <% if session[:user_id] %>
-	<%= gmaps({ "direction" => { "data" => { "from" => @user.address, "to" => @event.address } } })%>
+	<%= gmaps({ "direction" => { "data" => { "from" => @user.address,
+		"to" => @event.address } } })%>
 <% else %>
 	<%= gmaps4rails(@json) %>
 <% end %>
