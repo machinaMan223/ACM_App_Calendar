@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013025040) do
+ActiveRecord::Schema.define(:version => 20111017174748) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -20,19 +20,18 @@ ActiveRecord::Schema.define(:version => 20111013025040) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
-    t.date     "eventDate"
-    t.time     "eventTime"
-    t.integer  "duration"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string   "location"
+    t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
     t.text     "description"
     t.decimal  "price"
     t.string   "icon"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
   end
 
   create_table "line_items", :force => true do |t|
