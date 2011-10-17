@@ -11,6 +11,8 @@ gem 'will_paginate', '>= 3.0.pre'
 
 gem 'gmaps4rails'
 
+gem 'event-calendar', :require => 'event_calendar'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
