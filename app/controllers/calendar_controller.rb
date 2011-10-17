@@ -1,4 +1,6 @@
 class CalendarController < ApplicationController
+  skip_before_filter :authorize
+  skip_before_filter :admin_authorize
   
   def index
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
