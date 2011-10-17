@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
+  has_event_calendar
   acts_as_gmappable
+  
   default_scope :order => 'eventDate desc, eventTime desc'
   
   validates :name, :eventTime, :location, :description,

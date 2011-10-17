@@ -1,4 +1,6 @@
 ACMApp::Application.routes.draw do
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
   get "event_calendar/index"
 
   get "roster/index"
