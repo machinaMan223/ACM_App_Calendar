@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <b>Eventdate:</b>
+  <b>Event Date:</b>
   <%= ((@event.start_at).to_date()).to_formatted_s(:long) %>
 </p>
 
 <p>
-  <b>Eventtime:</b>
+  <b>Event Time:</b>
   <%= ((@event.start_at).to_time()).to_s(:time) %>
 </p>
 
@@ -57,4 +57,4 @@
 		<%= link_to 'Edit', edit_event_path(@event) %> |
 	<% end %>
 <% end %>
-<%= link_to 'Back', :back %>
+<%= link_to 'Back', :back %> |
