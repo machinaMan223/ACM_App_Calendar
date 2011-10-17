@@ -2,12 +2,11 @@ class Event < ActiveRecord::Base
   has_event_calendar
   acts_as_gmappable
   
-  default_scope :order => 'eventDate desc, eventTime desc'
+  default_scope :order => 'start_at desc'
   
-  validates :name, :eventTime, :location, :description,
+  validates :name, :start_at, :end_at, :location, :description,
       :icon, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
-  validates :duration, :numericality => {:greater_than_or_equal_to => 0}
   validates :name, :uniqueness => true
   validates :icon, :format => {
     :with => %r{\.(gif|jpg|png)$}i,
